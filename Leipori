@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Leipori</name>
+		<update version="0.2">
+			<file name="race-leipori.xml" url="placeholder" />
+		</update>
+	</info>
+
+	<element name="Leipori" type="Race" source="Loutish Handbook" id="ID_RACE_LEIPORI">
+		<description>
+			<p class="flavor"> Leipori are a rabbit-like species that appear to largely live in caverns under the Enchanted Forest known as 'The Burrows'.
+
+Leipori possess a lot of magical power, particularly that of the Enchanted Forest, which allows the leipori to transform things, including themselves if they have significant control of arcane forces.</p>
+			<h4>PHYSICAL APPEARANCE</h4>
+			<p>They are anthropomorphic rabbit-like creatures. They range from 2 to above 3 feet tall. They usually weigh between 20 and 25 pounds. They are tiny creatures. </p>
+			<h4>HIDDEN WOODLAND REALMS</h4>
+			<p>Most leipori dwell in small forest villages hidden among the trees. Leipori depend on their magical abilities in day to day life. Their contact with outsiders is usually limited, though a few leipori venture into the outside world to further their studies and broaden their horizons.</p>
+			<h4>LEIPORI TRAITS</h4>
+			<p>Your leipori character has a variety of natural abilities, the result of their natural magical prowess.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Intelligence score increases by 2 and your Dexterity score increases by 1.</p>
+			<p class="indent"><strong><em>Age.</em></strong> Leipori reach adulthood in their late teens and live less than a century.</p>
+			<p class="indent"><strong><em>Alignment.</em></strong> Leipori love freedom, variety, and selfexpression, so they lean strongly toward the gentler aspects of chaos. They value and protect others'freedom as well as their own, and they are more often good than not.</p>
+			<p class="indent"><strong><em>Size.</em></strong> Elves range from under 2 to above 3 feet tall and have slender builds. Your size is Tiny.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your base walking speed is 35 feet.</p>
+			<p class="indent"><strong><em>Sharp Mind.</em></strong> You have proficiency in the Arcana skill.</p>
+			<p class="indent"><strong><em>Cantrip.</em></strong> You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.</p>
+			<p class="indent"><strong><em>Cozy.</em></strong> Leipori only sleep for 4 hours a day.</p>
+			<p class="indent"><strong><em>Languages.</em></strong> You can speak, read, and write Common and Sylvan as well as one other language of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="names" type="male">Asahi, Daku, Enyo, Haru, Ito, Kurai, Riku, Sora, Tenma, Umi, Yami</set>
+			<set name="names" type="female">Akari, Chisa, Emi, Fuka, Himari, Itsuki, Moji, Rei, Suika, Yui</set>
+			<set name="names-format">{{name}}</set>
+			<set name="height" modifier="2d10">2'1"</set>
+			<set name="weight" modifier="1d4">20 lb.</set>
+		</setters>
+		<rules>
+			<stat name="intelligence" value="2" requirements="!ID_UA_PSK_GRANTS_LEIPORI_SUBRACE"/>
+			<stat name="dexterity" value="1"/>
+			<stat name="innate speed" value="35" bonus="base" />
+			<grant type="Size" id="ID_SIZE_TINY" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON"/>
+			<grant type="Language" id="ID_LANGUAGE_SYLVAN" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_EXTRA_LANGUAGE" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_SHARP_MIND" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_CANTRIP" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_COZY" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_LEIPORI_SUBRACE" />
+		</rules>
+	</element>
+	<element name="Sharp Mind" type="Racial Trait" source="Loutish Handbook" id="ID_RACIAL_TRAIT_SHARP_MIND">
+		<description>
+			<p>You have proficiency in the Arcana skill.</p>
+		</description>
+		<sheet display="false">
+			<description>You have proficiency in the Arcana skill.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+		</rules>
+	</element>
+	<element name="Cozy" type="Racial Trait" source="Loutish Handbook" id="ID_RACIAL_TRAIT_COZY">
+		<description>
+			<p>Leipori only sleep for 4 hours a day.</p>
+		</description>
+		<sheet>
+			<description>Leipori only sleep for 4 hours a day.</description>
+		</sheet>
+	</element>
+	<element name="Cantrip" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_CANTRIP">
+		<description>
+			<p>You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.</p>
+		</description>
+		<sheet display="false">
+			<description>You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Wizard Cantrip (Leipori)" supports="Wizard&amp;&amp;0" />
+		</rules>
+	</element>
+	<element name="Extra Language" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_EXTRA_LANGUAGE">
+		<description>
+			<p>You can speak, read, and write one extra language of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Language" name="Language (Leipori)" supports="Standard||Exotic" />
+		</rules>
+	</element>
+	<element name="Leipori Subrace" type="Racial Trait" source="Loutish Handbook" id="ID_RACIAL_TRAIT_LEIPORI_SUBRACE">
+		<description>
+			<p>Due to differences in ideologies, people of the leipori decide to live their lives in these main ways.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Sub Race" name="Leipori Subrace" supports="Leipori" />
+		</rules>
+	</element>
+
+	<element name="Polmorph Leipori" type="Sub Race" source="Loutish Handbook" id="ID_SUB_RACE_POLYMORPH_LEIPORI">
+		<supports>Elf</supports>
+		<description>
+			<p>These Leipori are not physically different from others, but they spent many years to gain mastery over the Polymorph spell.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="height" modifier="2d10">2'1"</set>
+			<set name="weight" modifier="1d4">20 lb.</set>
+		</setters>
+		<rules>
+			
+		</rules>
+	</element> 	
+
+	<element name="Humanoid Leipori" type="Sub Race" source="Loutish Handbook" id="ID_SUB_RACE_HUMANOID_LEIPORI">
+		<supports>Leipori</supports>
+		<description>
+			<p>As a leipori, you are a tiny creature looked down on and mocked by other races for your cute appearance. Some leipori grow tired of this, and use their mastery of their polymorphing technique to change their appearance to look more humanoid.</p>
+			<p class="indent"><strong><em>Spirit Link.</em></strong> .</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="height" modifier="2d10">4'6"</set>
+			<set name="weight" modifier="1d4">100 lb.</set>
+		</setters>
+		<rules>
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_SPIRIT_LINK" />
+		</rules>
+	</element>
+	<element name="Spirit Link" type="Racial Trait" source="Loutish Handbook" id="ID_RACIAL_TRAIT_SPIRIT_LINK">
+        <description>
+            <p>As an action, create a glowing link between yourself and another creature in a 10 foot radius. This link allows any spell to affect the target ragardless of the spell range. This link can be broken by creating an obstruction in the link for 18 seconds (or 3 turns) or manually by the user as a bonus action.</p>
+            <p class="indent">You can use this feature a number of times equal to your level. You regain all expended uses of it when you finish a long rest.</p>
+        </description>
+        <sheet action="Action" usage="{{spirit link:uses}}/Long Rest">
+            <description>Choose 1 creature within 10ft and create a glowing line between you and the target. This link glows in a 0.5ft radius and can stay connected up to 60ft away. The creature is now also affected by any spells or features used if they're out of the range. You can cancel your link at any time as a bonus action. </description>
+        </sheet>
+        <rules>
+            <stat name="spirit link:uses" value="level" />
+        </rules>
+    </element>
+			<description>You have proficiency with rapiers, shortswords, and hand crossbows.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_RAPIER" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTSWORD" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_HAND" />
+		</rules>
+	</element>
+</elements>
