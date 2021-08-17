@@ -3,7 +3,7 @@
 	<info>
 		<name>Leipori</name>
 		<update version="0.2">
-			<file name="race-leipori.xml" url="placeholder" />
+			<file name="race-leipori.xml" url="https://github.com/princieDV/DND/blob/main/Leipori" />
 		</update>
 	</info>
 
@@ -141,12 +141,5 @@ Leipori possess a lot of magical power, particularly that of the Enchanted Fores
             <stat name="spirit link:uses" value="level" />
         </rules>
     </element>
-			<description>You have proficiency with rapiers, shortswords, and hand crossbows.</description>
-		</sheet>
-		<rules>
-			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_RAPIER" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTSWORD" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_HAND" />
-		</rules>
 	</element>
 </elements>
