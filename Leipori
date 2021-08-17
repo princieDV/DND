@@ -100,9 +100,10 @@ Leipori possess a lot of magical power, particularly that of the Enchanted Fores
 	</element>
 
 	<element name="Polmorph Leipori" type="Sub Race" source="Loutish Handbook" id="ID_SUB_RACE_POLYMORPH_LEIPORI">
-		<supports>Elf</supports>
+		<supports>Leipori</supports>
 		<description>
 			<p>These Leipori are not physically different from others, but they spent many years to gain mastery over the Polymorph spell.</p>
+			<p>As an action, you can use a variant of the Polymorph spell, which allows you to to polymorph a creature into another of lower CR. The target's CR can be lowered by half your level, rounded down. This can be used a number of times equal to half your intelligence modifier, minimum one. You regain all expended ses of it when you finish a long rest.</p>
 		</description>
 		<sheet display="false" />
 		<setters>
@@ -110,15 +111,24 @@ Leipori possess a lot of magical power, particularly that of the Enchanted Fores
 			<set name="weight" modifier="1d4">20 lb.</set>
 		</setters>
 		<rules>
-			
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_LEIPORI_MORPH" />
 		</rules>
 	</element> 	
+	<element name="Leipori Polymorph" type="Racial Trait" source="Loutish Handbook" id="ID_RACIAL_TRAIT_LEIPORI_MORPH">
+		<description>
+		<p>As an action, you can use a variant of the Polymorph spell, which allows you to to polymorph a creature into another of lower CR. The target's CR can be lowered by half your level, rounded down. This can be used a number of times equal to half your intelligence modifier, minimum one. You regain all expended ses of it when you finish a long rest.</p>
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+        <description>As an action, you can use a variant of the Polymorph spell, which allows you to to polymorph a creature into another of lower CR. The target's CR can be lowered by half your level, rounded down. This can be used a number of times equal to half your intelligence modifier, minimum one. You regain all expended uses of it when you finish a long rest.</description>
+        </sheet>
+	</element>
 
 	<element name="Humanoid Leipori" type="Sub Race" source="Loutish Handbook" id="ID_SUB_RACE_HUMANOID_LEIPORI">
 		<supports>Leipori</supports>
 		<description>
 			<p>As a leipori, you are a tiny creature looked down on and mocked by other races for your cute appearance. Some leipori grow tired of this, and use their mastery of their polymorphing technique to change their appearance to look more humanoid.</p>
-			<p class="indent"><strong><em>Spirit Link.</em></strong> .</p>
+			<p class="indent"><strong><em>Spirit Link.</em></strong> As an action, create a glowing link between yourself and another creature in a 10 foot radius. This link allows any spell to affect the target ragardless of the spell range. This link can be broken by creating an obstruction in the link for 18 seconds (or 3 turns) or manually by the user as a bonus action.</p>
+            <p class="indent">You can use this feature a number of times equal to your level. You regain all expended uses of it when you finish a short rest.</p>
 		</description>
 		<sheet display="false" />
 		<setters>
@@ -134,7 +144,7 @@ Leipori possess a lot of magical power, particularly that of the Enchanted Fores
             <p>As an action, create a glowing link between yourself and another creature in a 10 foot radius. This link allows any spell to affect the target ragardless of the spell range. This link can be broken by creating an obstruction in the link for 18 seconds (or 3 turns) or manually by the user as a bonus action.</p>
             <p class="indent">You can use this feature a number of times equal to your level. You regain all expended uses of it when you finish a long rest.</p>
         </description>
-        <sheet action="Action" usage="{{spirit link:uses}}/Long Rest">
+        <sheet action="Action" usage="{{spirit link:uses}}/Short Rest">
             <description>Choose 1 creature within 10ft and create a glowing line between you and the target. This link glows in a 0.5ft radius and can stay connected up to 60ft away. The creature is now also affected by any spells or features used if they're out of the range. You can cancel your link at any time as a bonus action. </description>
         </sheet>
         <rules>
